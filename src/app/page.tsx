@@ -38,6 +38,12 @@ const Linkedin = ({ size = 24, className = "" }) => (
     <circle cx="4" cy="4" r="2"/>
   </svg>
 );
+
+const Whatsapp = ({ size = 24, className = "" }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+  </svg>
+);
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -598,7 +604,7 @@ export default function Home() {
             </span>
             
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black max-w-3xl mx-auto leading-tight mb-8">
-              Let's Build Something <br className="hidden md:block"/> <span className="text-accent italic font-serif">Extraordinary.</span>
+              Let's Build Something <br className="hidden md:block"/> <span className="text-accent">Extraordinary.</span>
             </h2>
             
             <p className="text-zinc-600 leading-relaxed text-sm md:text-base mb-12 max-w-2xl mx-auto">
@@ -610,20 +616,20 @@ export default function Home() {
                 <Mail size={18} />
                 sohaibhaider01@gmail.com
               </a>
-              <a href="tel:+923064565203" className="flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 bg-black hover:bg-zinc-800 text-white rounded-full transition-all duration-300 font-bold text-base">
-                <Phone size={18} />
+              <a href="https://wa.me/923064565203" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 bg-[#25D366] hover:bg-[#1da851] text-white rounded-full transition-all duration-300 font-bold text-base hover:shadow-lg hover:shadow-[#25D366]/20">
+                <Whatsapp size={20} />
                 +92 306 4565203
               </a>
             </div>
 
-            <div className="flex items-center justify-center gap-6 mt-16 pt-8 border-t border-zinc-200">
-              <a href="https://linkedin.com/in/sohaibhaider-" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-zinc-500 hover:text-black transition-colors duration-300 font-semibold text-sm">
-                <Linkedin size={20} />
-                LinkedIn
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-16 pt-8 border-t border-zinc-200">
+              <a href="https://linkedin.com/in/sohaibhaider-" target="_blank" rel="noreferrer" className="flex items-center gap-3 px-6 py-3 bg-zinc-50 hover:bg-zinc-100 border border-zinc-200 text-zinc-600 hover:text-black rounded-full transition-all duration-300 font-medium text-sm">
+                <Linkedin size={18} className="text-[#0A66C2]" />
+                linkedin.com/in/sohaibhaider-
               </a>
-              <a href="https://github.com/Sohaib-Haider" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-zinc-500 hover:text-black transition-colors duration-300 font-semibold text-sm">
-                <Github size={20} />
-                GitHub
+              <a href="https://github.com/Sohaib-Haider" target="_blank" rel="noreferrer" className="flex items-center gap-3 px-6 py-3 bg-zinc-50 hover:bg-zinc-100 border border-zinc-200 text-zinc-600 hover:text-black rounded-full transition-all duration-300 font-medium text-sm">
+                <Github size={18} />
+                github.com/Sohaib-Haider
               </a>
             </div>
           </div>
