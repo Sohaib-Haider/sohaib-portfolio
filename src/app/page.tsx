@@ -82,10 +82,6 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeProjectTab, setActiveProjectTab] = useState("all");
 
-  // Form State
-  const [formState, setFormState] = useState({ name: "", email: "", message: "" });
-  const [formSubmitted, setFormSubmitted] = useState(false);
-
   // References for Scroll Animations
   const heroRef = useRef<HTMLDivElement>(null);
   const leftColRef = useRef<HTMLDivElement>(null);
@@ -95,16 +91,6 @@ export default function Home() {
   const experienceRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
-
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formState.name || !formState.email || !formState.message) return;
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setFormState({ name: "", email: "", message: "" });
-      setFormSubmitted(false);
-    }, 4000);
-  };
 
   // Entrance and Scroll animations
   useGSAP(() => {
@@ -599,121 +585,39 @@ export default function Home() {
       </section>
 
 
-      {/* SECTION: CONTACT */}
-      <section id="contact" ref={contactRef} className="relative py-24 px-6 md:px-16 xl:px-20 max-w-[max(1536px,calc(100vw_-_384px))] mx-auto z-10 border-t border-zinc-900 bg-black">
-        
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          
-          {/* Details */}
-          <div className="lg:col-span-5 scroll-fade-in flex flex-col justify-center">
-            <div>
-              <span className="text-xs font-semibold tracking-widest text-accent uppercase flex items-center gap-2 mb-6">
-                <Mail size={14} /> Connect
-              </span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                Let's Shake Hands
-              </h2>
-              <p className="text-zinc-400 leading-relaxed text-sm md:text-base mb-10 max-w-md">
-                Have an automation pipeline to build or data infrastructure to design? Drop me a message, let's explore how we can collaborate.
-              </p>
-            </div>
+      {/* SECTION: CTA */}
+      <section id="contact" ref={contactRef} className="relative py-32 px-6 md:px-16 xl:px-20 max-w-5xl mx-auto z-10 border-t border-zinc-900 bg-black text-center scroll-fade-in">
+        <span className="text-xs font-semibold tracking-widest text-accent uppercase flex items-center justify-center gap-2 mb-6">
+          <Mail size={14} /> Connect
+        </span>
+        <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+          Let's Build Something <br className="hidden md:block"/> <span className="text-accent italic font-serif">Extraordinary.</span>
+        </h2>
+        <p className="text-zinc-400 leading-relaxed text-lg md:text-xl mb-12 max-w-2xl mx-auto">
+          Have an automation pipeline to build or data infrastructure to design? My inbox is always open. Let's explore how we can collaborate.
+        </p>
 
-            <div className="space-y-4 text-sm text-zinc-300 font-mono mt-4">
-              <a href="mailto:sohaibhaider01@gmail.com" className="flex items-center gap-3 hover:text-accent transition-colors duration-300">
-                <Mail size={16} className="text-accent" />
-                sohaibhaider01@gmail.com
-              </a>
-              <a href="tel:+923064565203" className="flex items-center gap-3 hover:text-accent transition-colors duration-300">
-                <Phone size={16} className="text-accent" />
-                +92 306 4565203 (Call & WhatsApp)
-              </a>
-              <div className="flex items-center gap-3">
-                <MapPin size={16} className="text-accent" />
-                Lahore, Pakistan, 54000
-              </div>
-            </div>
-
-            <div className="flex gap-4 mt-12">
-              <a href="https://linkedin.com/in/sohaibhaider-" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-6 py-3 bg-zinc-900/50 hover:bg-zinc-800 text-white border border-zinc-800 hover:border-zinc-700 rounded-xl transition-all duration-300 font-semibold text-sm">
-                <Linkedin size={18} />
-                LinkedIn
-              </a>
-              <a href="https://github.com/Sohaib-Haider" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-6 py-3 bg-zinc-900/50 hover:bg-zinc-800 text-white border border-zinc-800 hover:border-zinc-700 rounded-xl transition-all duration-300 font-semibold text-sm">
-                <Github size={18} />
-                GitHub
-              </a>
-            </div>
-          </div>
-
-          {/* Form */}
-          <div className="lg:col-span-7 scroll-fade-in">
-            <div className="bg-zinc-950/60 border border-zinc-900 p-8 md:p-10 rounded-3xl backdrop-blur-sm">
-              {formSubmitted ? (
-                <div className="flex flex-col items-center justify-center text-center py-16">
-                  <span className="w-12 h-12 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center text-accent mb-6">
-                    <ThumbsUp size={20} />
-                  </span>
-                  <h3 className="text-2xl font-serif font-bold text-white mb-2">Thank You!</h3>
-                  <p className="text-zinc-400 text-sm font-mono max-w-xs">
-                    Your message has been processed. I will reply to you as soon as possible.
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={handleFormSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="form-name" className="block text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-2">Name</label>
-                      <input 
-                        id="form-name"
-                        type="text" 
-                        required
-                        value={formState.name}
-                        onChange={e => setFormState(prev => ({ ...prev, name: e.target.value }))}
-                        placeholder="John Doe"
-                        className="w-full bg-zinc-900/40 border border-zinc-850 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent text-white transition-colors"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="form-email" className="block text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-2">Email Address</label>
-                      <input 
-                        id="form-email"
-                        type="email" 
-                        required
-                        value={formState.email}
-                        onChange={e => setFormState(prev => ({ ...prev, email: e.target.value }))}
-                        placeholder="john@example.com"
-                        className="w-full bg-zinc-900/40 border border-zinc-850 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent text-white transition-colors"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="form-message" className="block text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-2">Message</label>
-                    <textarea 
-                      id="form-message"
-                      rows={5} 
-                      required
-                      value={formState.message}
-                      onChange={e => setFormState(prev => ({ ...prev, message: e.target.value }))}
-                      placeholder="Hi, let's talk about the..."
-                      className="w-full bg-zinc-900/40 border border-zinc-850 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent text-white transition-colors resize-none"
-                    ></textarea>
-                  </div>
-
-                  <button 
-                    type="submit"
-                    className="w-full bg-accent hover:bg-rose-600 text-white font-semibold py-3.5 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-accent/15"
-                  >
-                    Send Message
-                    <Send size={14} />
-                  </button>
-                </form>
-              )}
-            </div>
-          </div>
-
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <a href="mailto:sohaibhaider01@gmail.com" className="flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 bg-accent hover:bg-rose-600 text-white rounded-full transition-all duration-300 font-bold text-base hover:shadow-lg hover:shadow-accent/20">
+            <Mail size={18} />
+            sohaibhaider01@gmail.com
+          </a>
+          <a href="tel:+923064565203" className="flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 bg-zinc-900 hover:bg-zinc-800 text-white border border-zinc-800 hover:border-zinc-700 rounded-full transition-all duration-300 font-bold text-base">
+            <Phone size={18} />
+            +92 306 4565203
+          </a>
         </div>
 
+        <div className="flex items-center justify-center gap-6 mt-12 pt-12 border-t border-zinc-900/50">
+          <a href="https://linkedin.com/in/sohaibhaider-" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-zinc-500 hover:text-white transition-colors duration-300 font-semibold text-sm">
+            <Linkedin size={20} />
+            LinkedIn
+          </a>
+          <a href="https://github.com/Sohaib-Haider" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-zinc-500 hover:text-white transition-colors duration-300 font-semibold text-sm">
+            <Github size={20} />
+            GitHub
+          </a>
+        </div>
       </section>
 
       {/* FOOTER */}
