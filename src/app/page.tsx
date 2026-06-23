@@ -586,37 +586,47 @@ export default function Home() {
 
 
       {/* SECTION: CTA */}
-      <section id="contact" ref={contactRef} className="relative py-32 px-6 md:px-16 xl:px-20 max-w-5xl mx-auto z-10 border-t border-zinc-900 bg-black text-center scroll-fade-in">
-        <span className="text-xs font-semibold tracking-widest text-accent uppercase flex items-center justify-center gap-2 mb-6">
-          <Mail size={14} /> Connect
-        </span>
-        <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
-          Let's Build Something <br className="hidden md:block"/> <span className="text-accent italic font-serif">Extraordinary.</span>
-        </h2>
-        <p className="text-zinc-400 leading-relaxed text-lg md:text-xl mb-12 max-w-2xl mx-auto">
-          Have an automation pipeline to build or data infrastructure to design? My inbox is always open. Let's explore how we can collaborate.
-        </p>
+      <section id="contact" ref={contactRef} className="relative py-24 px-6 md:px-16 xl:px-20 max-w-[max(1536px,calc(100vw_-_384px))] mx-auto z-10 border-t border-zinc-900 bg-black">
+        <div className="bg-white rounded-[3rem] p-12 md:p-20 xl:p-24 text-center scroll-fade-in shadow-[0_20px_50px_rgba(255,255,255,0.05)] relative overflow-hidden max-w-5xl mx-auto">
+          {/* Subtle background decoration for the white theme */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-zinc-100 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4"></div>
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"></div>
+          
+          <div className="relative z-10">
+            <span className="text-xs font-semibold tracking-widest text-accent uppercase flex items-center justify-center gap-2 mb-6">
+              <Mail size={14} /> Connect
+            </span>
+            
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black max-w-3xl mx-auto leading-tight mb-8">
+              Let's Build Something <br className="hidden md:block"/> <span className="text-accent italic font-serif">Extraordinary.</span>
+            </h2>
+            
+            <p className="text-zinc-600 leading-relaxed text-sm md:text-base mb-12 max-w-2xl mx-auto">
+              Have an automation pipeline to build or data infrastructure to design? My inbox is always open. Let's explore how we can collaborate.
+            </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <a href="mailto:sohaibhaider01@gmail.com" className="flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 bg-accent hover:bg-rose-600 text-white rounded-full transition-all duration-300 font-bold text-base hover:shadow-lg hover:shadow-accent/20">
-            <Mail size={18} />
-            sohaibhaider01@gmail.com
-          </a>
-          <a href="tel:+923064565203" className="flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 bg-zinc-900 hover:bg-zinc-800 text-white border border-zinc-800 hover:border-zinc-700 rounded-full transition-all duration-300 font-bold text-base">
-            <Phone size={18} />
-            +92 306 4565203
-          </a>
-        </div>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <a href="mailto:sohaibhaider01@gmail.com" className="flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 bg-accent hover:bg-rose-600 text-white rounded-full transition-all duration-300 font-bold text-base hover:shadow-lg hover:shadow-accent/20">
+                <Mail size={18} />
+                sohaibhaider01@gmail.com
+              </a>
+              <a href="tel:+923064565203" className="flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 bg-black hover:bg-zinc-800 text-white rounded-full transition-all duration-300 font-bold text-base">
+                <Phone size={18} />
+                +92 306 4565203
+              </a>
+            </div>
 
-        <div className="flex items-center justify-center gap-6 mt-12 pt-12 border-t border-zinc-900/50">
-          <a href="https://linkedin.com/in/sohaibhaider-" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-zinc-500 hover:text-white transition-colors duration-300 font-semibold text-sm">
-            <Linkedin size={20} />
-            LinkedIn
-          </a>
-          <a href="https://github.com/Sohaib-Haider" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-zinc-500 hover:text-white transition-colors duration-300 font-semibold text-sm">
-            <Github size={20} />
-            GitHub
-          </a>
+            <div className="flex items-center justify-center gap-6 mt-16 pt-8 border-t border-zinc-200">
+              <a href="https://linkedin.com/in/sohaibhaider-" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-zinc-500 hover:text-black transition-colors duration-300 font-semibold text-sm">
+                <Linkedin size={20} />
+                LinkedIn
+              </a>
+              <a href="https://github.com/Sohaib-Haider" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-zinc-500 hover:text-black transition-colors duration-300 font-semibold text-sm">
+                <Github size={20} />
+                GitHub
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
