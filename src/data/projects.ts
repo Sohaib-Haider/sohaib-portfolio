@@ -264,7 +264,7 @@ export const projects: Project[] = [
   },
   {
     slug: "smart-movie-recommendation-system",
-    title: "Simple Movie Recommendation System",
+    title: "Movie Recommendation System",
     tech: "Python, NLP, scikit-learn, TMDB API",
     desc: "Built a content-based recommendation engine using NLP feature engineering (cosine similarity matching on tags). Integrated TMDB API to dynamically render poster images and details.",
     category: "data-science",
