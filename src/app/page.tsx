@@ -117,7 +117,7 @@ export default function Home() {
       { opacity: 1, scale: 1, duration: 1.5, ease: "power4.out" }
     );
 
-    // Left column items fade and slide right SECOND
+    // Left & Right columns fade and slide in TOGETHER
     tl.fromTo(
       ".hero-left-anim",
       { opacity: 0, x: -50 },
@@ -125,12 +125,11 @@ export default function Home() {
       "-=0.5"
     );
 
-    // Right column items fade and slide left THIRD
     tl.fromTo(
       ".hero-right-anim",
       { opacity: 0, x: 50 },
       { opacity: 1, x: 0, duration: 1.0, stagger: 0.15, ease: "power3.out" },
-      "-=0.5"
+      "<"
     );
 
     // Background shapes animations
