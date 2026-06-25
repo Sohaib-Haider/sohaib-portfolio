@@ -1,5 +1,5 @@
 import React from 'react';
-import { Database, Server, Cpu, Brain, Network, Bot, ShieldAlert, BarChart3, Lock, LineChart, FileJson, Combine } from "lucide-react";
+import { Database, Server, Cpu, Brain, Network, Bot, ShieldAlert, BarChart3, Lock, LineChart, FileJson, Combine, Package, Users, Activity } from "lucide-react";
 
 export default function BusinessInsightsLayout({ project }: { project: any }) {
   return (
@@ -84,7 +84,119 @@ export default function BusinessInsightsLayout({ project }: { project: any }) {
         </div>
       </section>
 
-      {/* 3. ML Layer */}
+      {/* 3. Core Platform Features */}
+      <section>
+        <div className="mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Core Platform Features</h2>
+          <p className="text-zinc-400 text-lg max-w-3xl mx-auto">An interactive suite of tools transforming raw metrics into actionable intelligence.</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="bg-[#0a0a0a] border border-zinc-800/50 rounded-3xl p-8 hover:border-zinc-700 transition-all shadow-xl flex flex-col group">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="p-3 bg-blue-500/10 rounded-2xl group-hover:bg-blue-500/20 transition-colors">
+                <Package className="text-blue-400" size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-white leading-tight">Batch Inventory Tracking</h3>
+            </div>
+            <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+              Track each purchase batch with its real cost price. Eliminate averaging errors and see actual per-product profitability down to the lot level.
+            </p>
+            <div className="flex flex-wrap gap-2 mt-auto">
+              <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 text-xs font-bold text-zinc-300 rounded-lg">FIFO Costing</span>
+              <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 text-xs font-bold text-zinc-300 rounded-lg">Per-Batch Profit</span>
+              <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 text-xs font-bold text-zinc-300 rounded-lg">Dead Stock Alerts</span>
+            </div>
+          </div>
+
+          <div className="bg-[#0a0a0a] border border-zinc-800/50 rounded-3xl p-8 hover:border-zinc-700 transition-all shadow-xl flex flex-col group">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="p-3 bg-emerald-500/10 rounded-2xl group-hover:bg-emerald-500/20 transition-colors">
+                <LineChart className="text-emerald-400" size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-white leading-tight">Sales Forecasting</h3>
+            </div>
+            <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+              Dual-engine forecasting with Meta's Prophet for trend & seasonality, combined with LSTM deep learning for complex temporal demand patterns.
+            </p>
+            <div className="flex flex-wrap gap-2 mt-auto">
+              <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 text-xs font-bold text-zinc-300 rounded-lg">Prophet</span>
+              <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 text-xs font-bold text-zinc-300 rounded-lg">LSTM</span>
+              <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 text-xs font-bold text-zinc-300 rounded-lg">Demand Planning</span>
+            </div>
+          </div>
+
+          <div className="bg-[#0a0a0a] border border-zinc-800/50 rounded-3xl p-8 hover:border-zinc-700 transition-all shadow-xl flex flex-col group">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="p-3 bg-purple-500/10 rounded-2xl group-hover:bg-purple-500/20 transition-colors">
+                <BarChart3 className="text-purple-400" size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-white leading-tight">Real-Time Dashboard</h3>
+            </div>
+            <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+              Live KPI monitoring with WebSocket-powered updates, Redis caching, and interactive drill-downs. Every metric always fresh, never stale.
+            </p>
+            <div className="flex flex-wrap gap-2 mt-auto">
+              <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 text-xs font-bold text-zinc-300 rounded-lg">WebSocket Live</span>
+              <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 text-xs font-bold text-zinc-300 rounded-lg">Redis Cache</span>
+              <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 text-xs font-bold text-zinc-300 rounded-lg">Export Reports</span>
+            </div>
+          </div>
+
+          <div className="bg-[#0a0a0a] border border-zinc-800/50 rounded-3xl p-8 hover:border-zinc-700 transition-all shadow-xl flex flex-col group">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="p-3 bg-orange-500/10 rounded-2xl group-hover:bg-orange-500/20 transition-colors">
+                <Users className="text-orange-400" size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-white leading-tight">Customer Segmentation</h3>
+            </div>
+            <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+              KNN-based clustering automatically identifies Champions, At-Risk, New, and Dormant customers — enabling precision targeting and CLV analysis.
+            </p>
+            <div className="flex flex-wrap gap-2 mt-auto">
+              <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 text-xs font-bold text-zinc-300 rounded-lg">KNN Clustering</span>
+              <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 text-xs font-bold text-zinc-300 rounded-lg">CLV Analysis</span>
+              <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 text-xs font-bold text-zinc-300 rounded-lg">RFM Scoring</span>
+            </div>
+          </div>
+
+          <div className="bg-[#0a0a0a] border border-zinc-800/50 rounded-3xl p-8 hover:border-zinc-700 transition-all shadow-xl flex flex-col group">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="p-3 bg-red-500/10 rounded-2xl group-hover:bg-red-500/20 transition-colors">
+                <ShieldAlert className="text-red-400" size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-white leading-tight">Churn Prediction</h3>
+            </div>
+            <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+              Multi-model ensemble (Random Forest, Gradient Boosting, Logistic Regression) flags customers likely to churn weeks before they actually leave.
+            </p>
+            <div className="flex flex-wrap gap-2 mt-auto">
+              <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 text-xs font-bold text-zinc-300 rounded-lg">Random Forest</span>
+              <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 text-xs font-bold text-zinc-300 rounded-lg">Gradient Boosting</span>
+              <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 text-xs font-bold text-zinc-300 rounded-lg">Early Warnings</span>
+            </div>
+          </div>
+
+          <div className="bg-[#0a0a0a] border border-zinc-800/50 rounded-3xl p-8 hover:border-zinc-700 transition-all shadow-xl flex flex-col group">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="p-3 bg-cyan-500/10 rounded-2xl group-hover:bg-cyan-500/20 transition-colors">
+                <Bot className="text-cyan-400" size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-white leading-tight">RAG-Powered AI Chatbot</h3>
+            </div>
+            <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+              Ask anything in plain English and get precise, data-grounded answers instantly. Built on LangChain, FAISS vector search, and transformer embeddings.
+            </p>
+            <div className="flex flex-wrap gap-2 mt-auto">
+              <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 text-xs font-bold text-zinc-300 rounded-lg">LangChain</span>
+              <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 text-xs font-bold text-zinc-300 rounded-lg">FAISS Vector Search</span>
+              <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 text-xs font-bold text-zinc-300 rounded-lg">Transformer NLP</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. ML Layer */}
       <section>
         <div className="mb-12 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Machine Learning & Deep Learning</h2>
@@ -114,7 +226,7 @@ export default function BusinessInsightsLayout({ project }: { project: any }) {
         </div>
       </section>
 
-      {/* 4. RAG & LangGraph */}
+      {/* 5. RAG & LangGraph */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#0a0a0a] to-[#121212] border border-zinc-800 rounded-[3rem] p-8 md:p-12 lg:p-16 shadow-2xl">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none"></div>
