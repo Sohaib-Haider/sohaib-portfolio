@@ -291,6 +291,56 @@ export default function BusinessInsightsLayout({ project }: { project: any }) {
         </div>
       </section>
 
+      {/* 6. LLM Roles */}
+      <section className="bg-[#050505] rounded-[3rem] p-8 md:p-12 lg:p-16 border border-zinc-800/50 shadow-2xl relative overflow-hidden mt-6 mb-12">
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-emerald-500/5 rounded-full blur-[150px] pointer-events-none"></div>
+        <div className="relative z-10">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-8 mb-16 border-b border-zinc-800/50 pb-12">
+            <div className="bg-white/10 p-5 rounded-[2rem]"><Cpu className="text-white" size={40} /></div>
+            <div>
+              <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-4">LLM Roles & Operations</h2>
+              <p className="text-zinc-400 text-lg max-w-3xl leading-relaxed">
+                Specific models are dynamically assigned distinct roles within the ecosystem to ensure high accuracy and optimized latency.
+              </p>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-black/40 p-8 rounded-[2rem] border border-zinc-800/30 flex flex-col hover:border-emerald-500/30 transition-colors">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase tracking-widest rounded-full border border-emerald-500/20">Llama 3.3</span>
+                <h4 className="text-white font-bold text-xl">Dynamic SQL Generation</h4>
+              </div>
+              <p className="text-zinc-400 text-sm leading-relaxed mt-auto">Acts as an AI Database Engineer. It reads the PostgreSQL schema details and dynamically writes the exact SQL SELECT queries to retrieve the correct metrics without hallucinations.</p>
+            </div>
+
+            <div className="bg-black/40 p-8 rounded-[2rem] border border-zinc-800/30 flex flex-col hover:border-blue-500/30 transition-colors">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="px-3 py-1 bg-blue-500/10 text-blue-400 text-[10px] font-bold uppercase tracking-widest rounded-full border border-blue-500/20">Llama 3.1</span>
+                <h4 className="text-white font-bold text-xl">Intent Classification</h4>
+              </div>
+              <p className="text-zinc-400 text-sm leading-relaxed mt-auto">Acts as a high-speed router, reading the user's message and instantly classifying it into categories (Analytical, Simple metric search, or casual greeting) to trigger the correct pipeline.</p>
+            </div>
+
+            <div className="bg-black/40 p-8 rounded-[2rem] border border-zinc-800/30 flex flex-col hover:border-emerald-500/30 transition-colors">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase tracking-widest rounded-full border border-emerald-500/20">Llama 3.3</span>
+                <h4 className="text-white font-bold text-xl">Investigation Planning</h4>
+              </div>
+              <p className="text-zinc-400 text-sm leading-relaxed mt-auto">Analyzes complex user requests (like "Why is revenue down?") and creates a logical, multi-step execution plan in JSON format for the Data Gatherer to follow.</p>
+            </div>
+
+            <div className="bg-black/40 p-8 rounded-[2rem] border border-zinc-800/30 flex flex-col hover:border-emerald-500/30 transition-colors">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase tracking-widest rounded-full border border-emerald-500/20">Llama 3.3</span>
+                <h4 className="text-white font-bold text-xl">Strategic Analysis Synthesis</h4>
+              </div>
+              <p className="text-zinc-400 text-sm leading-relaxed mt-auto">Takes raw database rows, mathematical forecasting outputs, churn risks, and strategy documents, acting as a Principal Business Consultant to write a formatted markdown report.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }
