@@ -57,7 +57,7 @@ export const projects: Project[] = [
   {
     slug: "business-insights-and-sales-forecasting",
     title: "Business Insights & Predictive Intelligence Platform",
-    tech: "PyTorch, Llama 3, LangGraph, FastAPI, TensorFlow, XGBoost",
+    tech: "PyTorch, Llama 3, LangGraph, Hugging Face, Vector Stores, Multi-Agent Orchestration, FastAPI, TensorFlow",
     desc: "Developed a full-stack AI-driven business intelligence platform featuring a LangGraph-powered multi-agent consultant, XGBoost time-series forecasting, and deep learning models for customer churn prediction.",
     category: "data-science",
     dateRange: "FEB 2024 - APR 2024",

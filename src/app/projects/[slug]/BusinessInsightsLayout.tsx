@@ -262,19 +262,28 @@ export default function BusinessInsightsLayout({ project }: { project: any }) {
             </div>
 
             <div className="bg-black/40 p-8 md:p-10 rounded-[2.5rem] border border-zinc-800/50 shadow-lg">
-              <h3 className="text-2xl font-bold text-white mb-8">2. LangGraph Stateful Flow</h3>
-              <ul className="space-y-8 text-zinc-400 text-sm">
+              <h3 className="text-2xl font-bold text-white mb-6 border-b border-zinc-800 pb-4">2. LangGraph Multi-Agent Flow</h3>
+              <p className="text-zinc-300 text-sm mb-6">Orchestrates five specialized agents passing data through a shared state:</p>
+              <ul className="space-y-6 text-zinc-400 text-sm">
                 <li>
-                  <strong className="text-purple-400 block text-base mb-2">Router & Planner Nodes</strong>
-                  Evaluates input via Llama 3. The planner deconstructs complex questions into structured task lists.
+                  <strong className="text-purple-400 block text-base mb-1">1. Router Agent</strong>
+                  Gatekeeper evaluating queries via Llama 3.1 8B to classify paths.
                 </li>
                 <li>
-                  <strong className="text-purple-400 block text-base mb-2">Data Gatherer & SQL Safety Guardian</strong>
-                  Executes the planner's checklist, triggers KPI scripts, drafts temporary SQL, and strictly blocks mutating keywords.
+                  <strong className="text-purple-400 block text-base mb-1">2. Planner Agent</strong>
+                  Project manager analyzing objectives to generate multi-step investigation plans.
                 </li>
                 <li>
-                  <strong className="text-purple-400 block text-base mb-2">RAG Retriever & Synthesizer</strong>
-                  Queries ChromaDB for semantic matches. Merges memory, raw data, and rules into a polished executive markdown report using Llama 3.3 70B.
+                  <strong className="text-purple-400 block text-base mb-1">3. Data Gatherer Agent</strong>
+                  Execution agent running targeted tools (SQL, RandomForest, KPI execution).
+                </li>
+                <li>
+                  <strong className="text-purple-400 block text-base mb-1">4. RAG Retriever Agent</strong>
+                  Search specialist performing semantic vector searches over ChromaDB.
+                </li>
+                <li>
+                  <strong className="text-purple-400 block text-base mb-1">5. Strategy Synthesizer</strong>
+                  Executive editor aggregating memory, raw data, and rules to draft a polished report.
                 </li>
               </ul>
             </div>
