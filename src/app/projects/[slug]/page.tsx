@@ -7,6 +7,7 @@ import { projects } from "@/data/projects";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import VoiceAILayout from "./VoiceAILayout";
+import BusinessInsightsLayout from "./BusinessInsightsLayout";
 
 interface Props {
   params: Promise<{
@@ -97,6 +98,8 @@ export default async function ProjectDetail({ params }: Props) {
 
         {project.slug === "voice-ai-booking-agent" ? (
           <VoiceAILayout project={project} />
+        ) : project.slug === "business-insights-and-sales-forecasting" ? (
+          <BusinessInsightsLayout project={project} />
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
             
@@ -146,7 +149,7 @@ export default async function ProjectDetail({ params }: Props) {
         {/* --- CUSTOM RICH LAYOUT SECTIONS --- */}
 
         {/* Features Grid */}
-        {project.slug !== "voice-ai-booking-agent" && project.features && project.features.length > 0 && (
+        {project.slug !== "voice-ai-booking-agent" && project.slug !== "business-insights-and-sales-forecasting" && project.features && project.features.length > 0 && (
           <div className="mt-32 pt-16 border-t border-zinc-900/50">
             <div className="text-center mb-16">
               <span className="text-blue-500 font-bold tracking-widest text-[10px] uppercase mb-4 block">Platform Features</span>
@@ -183,7 +186,7 @@ export default async function ProjectDetail({ params }: Props) {
         )}
 
         {/* Tech Stack Grid */}
-        {project.slug !== "voice-ai-booking-agent" && project.techStackExtended && project.techStackExtended.length > 0 && (
+        {project.slug !== "voice-ai-booking-agent" && project.slug !== "business-insights-and-sales-forecasting" && project.techStackExtended && project.techStackExtended.length > 0 && (
           <div className="mt-32">
             <div className="text-center mb-16">
               <span className="text-blue-500 font-bold tracking-widest text-[10px] uppercase mb-4 block">Technology</span>
@@ -203,7 +206,7 @@ export default async function ProjectDetail({ params }: Props) {
         )}
 
         {/* Roadmap Timeline */}
-        {project.slug !== "voice-ai-booking-agent" && project.roadmap && project.roadmap.length > 0 && (
+        {project.slug !== "voice-ai-booking-agent" && project.slug !== "business-insights-and-sales-forecasting" && project.roadmap && project.roadmap.length > 0 && (
           <div className="mt-32 mb-12">
             <div className="text-center mb-24">
               <span className="text-blue-500 font-bold tracking-widest text-[10px] uppercase mb-4 block">Implementation</span>
