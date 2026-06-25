@@ -539,11 +539,11 @@ export default function Home() {
                   </h3>
 
                   <div>
-                    <p className="text-zinc-400 leading-relaxed text-sm md:text-base mb-6 max-w-md">
+                    <p className="text-zinc-400 leading-relaxed text-sm md:text-base mb-6 max-w-lg">
                       {project.desc}
                     </p>
 
-                    <div className="flex flex-wrap gap-2 mb-10 max-w-md">
+                    <div className="flex flex-wrap gap-2 mb-10 max-w-lg pr-4">
                       {project.tech.split(", ").map((t, i) => (
                         <span key={i} className="px-3 py-1.5 bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs font-semibold rounded-full">
                           {t}
